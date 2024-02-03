@@ -62,7 +62,7 @@ public class DeferredRegistries {
 
 	@OnlyIn(Dist.CLIENT)
 	@SubscribeEvent
-	public static void onModelBake(ModelEvent.BakingCompleted event) {
+	public static void onModelBake(ModelEvent.ModifyBakingResult event) {
 		Map<ResourceLocation, BakedModel> modelRegistry = event.getModels();
 		DeferredRegistries.WINDOW_IN_A_BLOCK.get().getStateDefinition()
 			.getPossibleStates()
